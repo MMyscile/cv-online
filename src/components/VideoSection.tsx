@@ -1,6 +1,20 @@
+"use client";
+
+import { useState, useRef } from "react";
+
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 export default function VideoSection() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handlePlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
+
   return (
     <section className="py-20 px-6 bg-[var(--cv-beige)]">
       <div className="max-w-7xl mx-auto">
@@ -72,11 +86,31 @@ export default function VideoSection() {
 
           {/* Vidéo à droite */}
           <div className="lg:sticky lg:top-24">
-            <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden shadow-lg">
+            <div className="aspect-video rounded-lg overflow-hidden shadow-lg relative">
+              {/* Overlay avant lecture */}
+              {!isPlaying && (
+                <div
+                  className="absolute inset-0 bg-gradient-to-br from-[var(--cv-green)] to-[var(--cv-green-dark)] flex flex-col items-center justify-center cursor-pointer z-10 group"
+                  onClick={handlePlay}
+                >
+                  <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center mb-4 group-hover:bg-white/30 transition-colors">
+                    <svg
+                      className="w-10 h-10 text-white ml-1"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                  <span className="text-white/90 text-sm font-medium">Cliquez pour lancer la vidéo</span>
+                </div>
+              )}
               <video
+                ref={videoRef}
                 className="w-full h-full object-cover"
                 controls
-                poster={`${basePath}/videos/poster.jpg`}
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
               >
                 <source src={`${basePath}/videos/presentation.mp4`} type="video/mp4" />
                 Votre navigateur ne supporte pas la lecture vidéo.
