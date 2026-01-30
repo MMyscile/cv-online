@@ -1,3 +1,5 @@
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export default function VideoSection() {
   return (
     <section className="py-20 px-6 bg-[var(--cv-beige)]">
@@ -58,9 +60,9 @@ export default function VideoSection() {
               <video
                 className="w-full h-full object-cover"
                 controls
-                poster="/videos/poster.jpg"
+                poster={`${basePath}/videos/poster.jpg`}
               >
-                <source src="/videos/presentation.mp4" type="video/mp4" />
+                <source src={`${basePath}/videos/presentation.mp4`} type="video/mp4" />
                 Votre navigateur ne supporte pas la lecture vidéo.
               </video>
             </div>
