@@ -36,7 +36,7 @@ export default function Skills() {
         <h2 className="text-3xl font-light text-center text-[var(--cv-green-dark)] mb-12">
           Compétences
         </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {skills.map((skillGroup) => (
             <div key={skillGroup.category}>
               <h3 className="text-lg font-semibold text-[var(--cv-green-dark)] mb-4 pb-2 border-b-2 border-[var(--cv-green-light)]">
