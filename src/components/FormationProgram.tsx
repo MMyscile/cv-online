@@ -215,11 +215,12 @@ function AccordionItem({
         </svg>
       </button>
       <div
-        className={`overflow-hidden transition-all duration-300 ${
-          isOpen ? "max-h-[800px]" : "max-h-0"
+        className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+          isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
         }`}
       >
-        <div className="px-6 py-4 bg-gray-50 space-y-4">
+        <div className="overflow-hidden">
+          <div className="px-6 py-4 bg-gray-50 space-y-4">
           {ccp.content.map((section, idx) => (
             <div key={idx}>
               <h5 className="font-medium text-[var(--cv-green-dark)] mb-2">
@@ -235,6 +236,7 @@ function AccordionItem({
               </ul>
             </div>
           ))}
+          </div>
         </div>
       </div>
     </div>
@@ -243,6 +245,7 @@ function AccordionItem({
 
 export default function FormationProgram() {
   const [openCcp, setOpenCcp] = useState<string | null>(null);
+  const [isCalendarExpanded, setIsCalendarExpanded] = useState(false);
 
   return (
     <section id="formation" className="py-20 px-6 bg-[var(--cv-beige)]">
@@ -288,11 +291,40 @@ export default function FormationProgram() {
               <span className="text-gray-600">Jours en centre de formation</span>
             </div>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-            {months.map((m) => (
-              <MiniCalendar key={m.key} monthKey={m.key} label={m.label} />
-            ))}
+          <div
+            className={`relative transition-[max-height] duration-1000 ease-in-out overflow-hidden lg:!max-h-none ${
+              isCalendarExpanded ? "max-h-[1800px]" : "max-h-[420px]"
+            }`}
+          >
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 pb-2">
+              {months.map((m) => (
+                <MiniCalendar key={m.key} monthKey={m.key} label={m.label} />
+              ))}
+            </div>
+            {!isCalendarExpanded && (
+              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[var(--cv-beige)] to-transparent pointer-events-none lg:hidden" />
+            )}
           </div>
+          <button
+            onClick={() => setIsCalendarExpanded(!isCalendarExpanded)}
+            className="mt-4 mx-auto text-[var(--cv-green-dark)] font-medium text-sm hover:underline flex items-center gap-1 lg:hidden"
+          >
+            {isCalendarExpanded ? (
+              <>
+                Voir moins
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                </svg>
+              </>
+            ) : (
+              <>
+                Voir plus
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </>
+            )}
+          </button>
         </div>
 
         {/* Programme */}
