@@ -17,7 +17,8 @@ export default function Navigation() {
   const navLinks = [
     { href: "#presentation", label: "Présentation" },
     { href: "#skills", label: "Compétences" },
-    { href: "#education", label: "Formations" },
+    { href: "#formation", label: "Programme GCF" },
+    { href: "#education", label: "Parcours" },
     { href: "#contact", label: "Contact" },
   ];
 
