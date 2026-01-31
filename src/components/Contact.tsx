@@ -68,6 +68,37 @@ export default function Contact() {
             </svg>
             Villenave-d&apos;Ornon (33140)
           </span>
+          <a
+            href="https://www.linkedin.com/in/micha%C3%ABl-myscile"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <rect
+                x="3"
+                y="3"
+                width="18"
+                height="18"
+                rx="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+              />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M8 11v5M8 8v.01M12 16v-5c0-1 .5-2 2-2s2 1 2 2v5"
+              />
+            </svg>
+            LinkedIn
+          </a>
         </div>
       </div>
     </section>
