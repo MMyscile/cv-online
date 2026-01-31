@@ -304,10 +304,10 @@ export default function FormationProgram() {
           </div>
           <div
             className={`relative transition-[max-height] duration-[1500ms] ease-[cubic-bezier(0.4,0,0.2,1)] overflow-hidden lg:!max-h-none ${
-              isCalendarExpanded ? "max-h-[1800px]" : "max-h-[420px]"
+              isCalendarExpanded ? "max-h-[2200px]" : "max-h-[420px]"
             }`}
           >
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 pb-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 pb-4">
               {months.map((m) => (
                 <MiniCalendar key={m.key} monthKey={m.key} label={m.label} />
               ))}
