@@ -253,7 +253,7 @@ export default function FormationProgram() {
       const ref = calendarSectionRef.current;
       setTimeout(() => {
         ref.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 150);
+      }, 300);
     }
     setIsCalendarExpanded(!isCalendarExpanded);
   };
@@ -303,7 +303,7 @@ export default function FormationProgram() {
             </div>
           </div>
           <div
-            className={`relative transition-[max-height] duration-1000 ease-in-out overflow-hidden lg:!max-h-none ${
+            className={`relative transition-[max-height] duration-[1500ms] ease-[cubic-bezier(0.4,0,0.2,1)] overflow-hidden lg:!max-h-none ${
               isCalendarExpanded ? "max-h-[1800px]" : "max-h-[420px]"
             }`}
           >
