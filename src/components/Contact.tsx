@@ -1,13 +1,16 @@
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 px-6 bg-[var(--cv-green-dark)] text-white">
-      <div className="max-w-3xl mx-auto text-center">
+    <section
+      id="contact"
+      className="py-20 px-6 bg-[var(--cv-green-dark)] text-white"
+    >
+      <div className="flex flex-col items-center max-w-3xl mx-auto text-center">
         <h2 className="text-3xl font-light mb-8">Me contacter</h2>
         <p className="text-[var(--cv-green-light)] mb-10 max-w-xl mx-auto">
-          Vous recherchez un alternant motivé et rigoureux pour votre cabinet ou entreprise ?
-          N&apos;hésitez pas à me contacter.
+          Vous recherchez un alternant motivé et rigoureux pour votre cabinet ou
+          entreprise ? N&apos;hésitez pas à me contacter.
         </p>
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
+        <div className="flex flex-col  w-4xl md:flex-row justify-evenly items-center gap-6">
           <a
             href="mailto:michael.myscile@gmail.com"
             className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
