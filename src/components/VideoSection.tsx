@@ -111,7 +111,7 @@ export default function VideoSection() {
               <p>
                 Ce que je recherche aujourd&apos;hui, c&apos;est une <strong className="text-[var(--cv-green-dark)]">structure
                 d&apos;accueil et un tuteur</strong> qui sauront m&apos;accompagner dans le développement de mes
-                compétences, avec une réelle volonté de transmission et de partage.
+                compétences, avec une réelle volonté de transmission et de partage durant ces 18 mois de formation.
               </p>
               <p className="inline">
                 Si vous cherchez un nouveau talent qui souhaite s&apos;inscrire sur la durée et sur lequel
