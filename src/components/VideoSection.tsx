@@ -19,7 +19,10 @@ export default function VideoSection() {
 
   const handleTextToggle = () => {
     if (isTextExpanded && textSectionRef.current) {
-      textSectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      const ref = textSectionRef.current;
+      setTimeout(() => {
+        ref.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 150);
     }
     setIsTextExpanded(!isTextExpanded);
   };

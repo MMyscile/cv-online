@@ -250,8 +250,10 @@ export default function FormationProgram() {
 
   const handleCalendarToggle = () => {
     if (isCalendarExpanded && calendarSectionRef.current) {
-      // Scroll to section when collapsing
-      calendarSectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      const ref = calendarSectionRef.current;
+      setTimeout(() => {
+        ref.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 150);
     }
     setIsCalendarExpanded(!isCalendarExpanded);
   };
