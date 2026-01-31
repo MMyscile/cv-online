@@ -8,12 +8,20 @@ export default function VideoSection() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isTextExpanded, setIsTextExpanded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const textSectionRef = useRef<HTMLDivElement>(null);
 
   const handlePlay = () => {
     if (videoRef.current) {
       videoRef.current.play();
       setIsPlaying(true);
     }
+  };
+
+  const handleTextToggle = () => {
+    if (isTextExpanded && textSectionRef.current) {
+      textSectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    setIsTextExpanded(!isTextExpanded);
   };
 
   return (
@@ -61,7 +69,7 @@ export default function VideoSection() {
           </div>
 
           {/* Texte - en bas sur mobile, à gauche sur desktop */}
-          <div className="w-full lg:w-1/2 lg:order-1">
+          <div ref={textSectionRef} className="w-full lg:w-1/2 lg:order-1 scroll-mt-20">
             {/* Quote mark décorative - ouverture (hors du container overflow) */}
             <svg
               className="w-6 h-6 text-[var(--cv-green)] opacity-30 mb-2"
@@ -72,7 +80,7 @@ export default function VideoSection() {
             </svg>
             <div
               className={`relative transition-[max-height] duration-1000 ease-in-out overflow-hidden lg:!max-h-none ${
-                isTextExpanded ? "max-h-[2000px]" : "max-h-[250px]"
+                isTextExpanded ? "max-h-[800px]" : "max-h-[250px]"
               }`}
             >
               <div className="text-gray-600 leading-relaxed space-y-4 text-[15px] pl-4">
@@ -135,7 +143,7 @@ export default function VideoSection() {
 
             {/* Bouton Voir plus / Voir moins - uniquement sur mobile/tablet */}
             <button
-              onClick={() => setIsTextExpanded(!isTextExpanded)}
+              onClick={handleTextToggle}
               className="mt-4 mx-auto text-[var(--cv-green-dark)] font-medium text-sm hover:underline flex items-center gap-1 lg:hidden"
             >
               {isTextExpanded ? (

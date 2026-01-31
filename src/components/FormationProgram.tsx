@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 // Jours de formation MF extraits du calendrier 2026-2027 (source: Modula Formation)
 const trainingDays: Record<string, number[]> = {
@@ -246,6 +246,15 @@ function AccordionItem({
 export default function FormationProgram() {
   const [openCcp, setOpenCcp] = useState<string | null>(null);
   const [isCalendarExpanded, setIsCalendarExpanded] = useState(false);
+  const calendarSectionRef = useRef<HTMLDivElement>(null);
+
+  const handleCalendarToggle = () => {
+    if (isCalendarExpanded && calendarSectionRef.current) {
+      // Scroll to section when collapsing
+      calendarSectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    setIsCalendarExpanded(!isCalendarExpanded);
+  };
 
   return (
     <section id="formation" className="py-20 px-6 bg-[var(--cv-beige)]">
@@ -278,7 +287,7 @@ export default function FormationProgram() {
         </div>
 
         {/* Calendrier */}
-        <div className="mb-16">
+        <div className="mb-16" ref={calendarSectionRef}>
           <h3 className="text-xl font-semibold text-[var(--cv-green-dark)] mb-6 flex items-center">
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -306,7 +315,7 @@ export default function FormationProgram() {
             )}
           </div>
           <button
-            onClick={() => setIsCalendarExpanded(!isCalendarExpanded)}
+            onClick={handleCalendarToggle}
             className="mt-4 mx-auto text-[var(--cv-green-dark)] font-medium text-sm hover:underline flex items-center gap-1 lg:hidden"
           >
             {isCalendarExpanded ? (
