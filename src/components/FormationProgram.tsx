@@ -172,7 +172,7 @@ function MiniCalendar({ monthKey, label }: { monthKey: string; label: string }) 
       <h4 className="text-sm font-semibold text-[var(--cv-green-dark)] mb-2 text-center">
         {label}
       </h4>
-      <div className="grid grid-cols-7 gap-0.5 text-center">
+      <div className="grid grid-cols-7 gap-1 text-center">
         {["L", "M", "M", "J", "V", "S", "D"].map((d, i) => (
           <div key={i} className="w-6 h-5 text-[10px] text-gray-400 font-medium">
             {d}
@@ -260,7 +260,7 @@ export default function FormationProgram() {
 
   return (
     <section id="formation" className="py-20 px-6 bg-[var(--cv-beige)]">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl xl:max-w-350 mx-auto">
         <h2 className="text-3xl font-light text-center text-[var(--cv-green-dark)] mb-4">
           Formation
         </h2>
@@ -303,22 +303,22 @@ export default function FormationProgram() {
             </div>
           </div>
           <div
-            className={`relative transition-[max-height] duration-[1500ms] ease-[cubic-bezier(0.4,0,0.2,1)] overflow-hidden lg:!max-h-none ${
+            className={`relative transition-[max-height] duration-[1500ms] ease-[cubic-bezier(0.4,0,0.2,1)] overflow-hidden xl:max-h-none! ${
               isCalendarExpanded ? "max-h-[2200px]" : "max-h-[420px]"
             }`}
           >
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 pb-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 pb-4">
               {months.map((m) => (
                 <MiniCalendar key={m.key} monthKey={m.key} label={m.label} />
               ))}
             </div>
             {!isCalendarExpanded && (
-              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[var(--cv-beige)] to-transparent pointer-events-none lg:hidden" />
+              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[var(--cv-beige)] to-transparent pointer-events-none xl:hidden" />
             )}
           </div>
           <button
             onClick={handleCalendarToggle}
-            className="mt-4 mx-auto text-[var(--cv-green-dark)] font-medium text-sm hover:underline flex items-center gap-1 lg:hidden"
+            className="mt-4 mx-auto text-[var(--cv-green-dark)] font-medium text-sm hover:underline flex items-center gap-1 xl:hidden"
           >
             {isCalendarExpanded ? (
               <>
