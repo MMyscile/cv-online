@@ -10,7 +10,7 @@ export default function Contact() {
           Vous recherchez un alternant motivé et rigoureux pour votre cabinet ou
           entreprise ? N&apos;hésitez pas à me contacter.
         </p>
-        <div className="flex flex-col  w-4xl md:flex-row justify-evenly items-center gap-6">
+        <div className="flex flex-col lg:flex-row justify-evenly items-center gap-6">
           <a
             href="mailto:michael.myscile@gmail.com"
             className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
@@ -32,7 +32,7 @@ export default function Contact() {
           </a>
           <a
             href="tel:+33650865691"
-            className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
+            className="flex items-center gap-3 text-white/80 hover:text-white transition-colors whitespace-nowrap"
           >
             <svg
               className="w-5 h-5"
@@ -49,7 +49,7 @@ export default function Contact() {
             </svg>
             06 50 86 56 91
           </a>
-          <span className="flex items-center gap-3 text-white/80">
+          <span className="flex items-center gap-3 text-white/80 whitespace-nowrap">
             <svg
               className="w-5 h-5"
               fill="none"
