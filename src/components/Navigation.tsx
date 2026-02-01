@@ -33,7 +33,7 @@ export default function Navigation() {
       }`}
     >
       <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="#" className="text-lg font-semibold text-[var(--cv-green-dark)]">
+        <a href="#" className="text-lg font-semibold text-cv-green-dark">
           MM
         </a>
 
@@ -43,7 +43,7 @@ export default function Navigation() {
             <a
               key={link.href}
               href={link.href}
-              className="text-gray-600 hover:text-[var(--cv-green)] transition-colors"
+              className="text-gray-600 hover:text-cv-green transition-colors"
             >
               {link.label}
             </a>
@@ -53,7 +53,7 @@ export default function Navigation() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-[var(--cv-green-dark)]"
+          className="md:hidden p-2 text-cv-green-dark"
           aria-label="Menu"
         >
           {mobileMenuOpen ? (
@@ -80,7 +80,7 @@ export default function Navigation() {
               key={link.href}
               href={link.href}
               onClick={handleLinkClick}
-              className="text-gray-600 hover:text-[var(--cv-green)] transition-colors py-2 border-b border-gray-100"
+              className="text-gray-600 hover:text-cv-green transition-colors py-2 border-b border-gray-100"
             >
               {link.label}
             </a>

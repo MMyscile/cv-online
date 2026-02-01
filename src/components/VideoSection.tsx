@@ -28,9 +28,9 @@ export default function VideoSection() {
   };
 
   return (
-    <section className="py-20 px-6 bg-[var(--cv-beige)]">
+    <section className="py-20 px-6 bg-cv-beige">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-light text-center text-[var(--cv-green-dark)] mb-12">
+        <h2 className="text-3xl font-light text-center text-cv-green-dark mb-12">
           Présentation
         </h2>
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 items-start">
@@ -40,7 +40,7 @@ export default function VideoSection() {
               {/* Overlay avant lecture */}
               {!isPlaying && (
                 <div
-                  className="absolute inset-0 bg-gradient-to-br from-[var(--cv-green)] to-[var(--cv-green-dark)] flex flex-col items-center justify-center cursor-pointer z-10 group"
+                  className="absolute inset-0 bg-linear-to-br from-cv-green to-cv-green-dark flex flex-col items-center justify-center cursor-pointer z-10 group"
                   onClick={handlePlay}
                 >
                   <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center mb-4 group-hover:bg-white/30 transition-colors">
@@ -75,26 +75,26 @@ export default function VideoSection() {
           <div ref={textSectionRef} className="w-full lg:w-1/2 lg:order-1 scroll-mt-20">
             {/* Quote mark décorative - ouverture (hors du container overflow) */}
             <svg
-              className="w-6 h-6 text-[var(--cv-green)] opacity-30 mb-2"
+              className="w-6 h-6 text-cv-green opacity-30 mb-2"
               fill="currentColor"
               viewBox="0 0 24 24"
             >
               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
             </svg>
             <div
-              className={`relative transition-[max-height] duration-[1500ms] ease-[cubic-bezier(0.4,0,0.2,1)] overflow-hidden lg:!max-h-none ${
-                isTextExpanded ? "max-h-[800px]" : "max-h-[250px]"
+              className={`relative transition-[max-height] duration-1500 ease-in-out overflow-hidden lg:max-h-none! ${
+                isTextExpanded ? "max-h-200" : "max-h-62.5"
               }`}
             >
               <div className="text-gray-600 leading-relaxed space-y-4 text-[15px] pl-4">
                 <p>
-                  Bonjour, je me présente, je m&apos;appelle <strong className="text-[var(--cv-green-dark)]">Michaël</strong> et
+                  Bonjour, je me présente, je m&apos;appelle <strong className="text-cv-green-dark">Michaël</strong> et
                   il y a quelques mois, j&apos;ai décidé de me lancer dans un nouveau projet, celui de me
                   reconvertir dans le domaine de la comptabilité. Et pour mener ce projet à bien, courant
                   octobre, j&apos;ai démarré une formation qui s&apos;est terminée il y a quelques semaines.
                 </p>
                 <p>
-                  Cette formation avait un <strong className="text-[var(--cv-green-dark)]">double objectif</strong> : Le premier,
+                  Cette formation avait un <strong className="text-cv-green-dark">double objectif</strong> : Le premier,
                   me rendre opérationnel en comptabilité et m&apos;ouvrir à la gestion. J&apos;y ai acquis des
                   bases solides en comptabilité générale, en révision comptable et sur les travaux de fin
                   d&apos;exercice, tout en travaillant sur des sujets comme les SIG, les budgets prévisionnels
@@ -102,7 +102,7 @@ export default function VideoSection() {
                 </p>
                 <p>
                   Le deuxième objectif, c&apos;était de poursuivre cette formation vers un{" "}
-                  <strong className="text-[var(--cv-green-dark)]">titre professionnel de gestionnaire comptable et fiscal</strong>,
+                  <strong className="text-cv-green-dark">titre professionnel de gestionnaire comptable et fiscal</strong>,
                   un équivalent Bac+2 en alternance, pour consolider mes bases et monter en compétences en
                   fiscalité, en gestion et en analyse financière — et bien sûr pratiquer concrètement sur le terrain.
                 </p>
@@ -113,7 +113,7 @@ export default function VideoSection() {
                   présence majoritaire en entreprise.
                 </p>
                 <p>
-                  Sur le plan personnel, je suis quelqu&apos;un de <strong className="text-[var(--cv-green-dark)]">rigoureux,
+                  Sur le plan personnel, je suis quelqu&apos;un de <strong className="text-cv-green-dark">rigoureux,
                   organisé, polyvalent</strong>, qui sait faire preuve d&apos;adaptabilité, qui aime travailler
                   en équipe — et surtout, petit bonus mais pas des moindres, j&apos;aime pratiquer la comptabilité.
                   Sur le plan des outils, je suis à l&apos;aise avec Excel et j&apos;ai déjà travaillé sur plusieurs
@@ -121,7 +121,7 @@ export default function VideoSection() {
                   pendant ma formation.
                 </p>
                 <p>
-                  Ce que je recherche aujourd&apos;hui, c&apos;est une <strong className="text-[var(--cv-green-dark)]">structure
+                  Ce que je recherche aujourd&apos;hui, c&apos;est une <strong className="text-cv-green-dark">structure
                   d&apos;accueil et un tuteur</strong> qui sauront m&apos;accompagner dans le développement de mes
                   compétences, avec une réelle volonté de transmission et de partage durant ces 18 mois de formation.
                 </p>
@@ -130,7 +130,7 @@ export default function VideoSection() {
                   vous êtes prêt à investir, je pense être le profil qu&apos;il vous faut.
                   {/* Quote mark décorative - fermeture */}
                   <svg
-                    className="inline-block w-5 h-5 ml-2 text-[var(--cv-green)] opacity-30 align-baseline transform rotate-180"
+                    className="inline-block w-5 h-5 ml-2 text-cv-green opacity-30 align-baseline transform rotate-180"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -140,14 +140,14 @@ export default function VideoSection() {
               </div>
               {/* Gradient fade overlay quand le texte est tronqué */}
               {!isTextExpanded && (
-                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[var(--cv-beige)] to-transparent pointer-events-none lg:hidden" />
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-cv-beige to-transparent pointer-events-none lg:hidden" />
               )}
             </div>
 
             {/* Bouton Voir plus / Voir moins - uniquement sur mobile/tablet */}
             <button
               onClick={handleTextToggle}
-              className="mt-4 mx-auto text-[var(--cv-green-dark)] font-medium text-sm hover:underline flex items-center gap-1 lg:hidden"
+              className="mt-4 mx-auto text-cv-green-dark font-medium text-sm hover:underline flex items-center gap-1 lg:hidden"
             >
               {isTextExpanded ? (
                 <>

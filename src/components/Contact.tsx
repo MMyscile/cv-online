@@ -2,11 +2,11 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 px-6 bg-[var(--cv-green-dark)] text-white"
+      className="py-20 px-6 bg-cv-green-dark text-white"
     >
       <div className="flex flex-col items-center max-w-3xl mx-auto text-center">
         <h2 className="text-3xl font-light mb-8">Me contacter</h2>
-        <p className="text-[var(--cv-green-light)] mb-10 max-w-xl mx-auto">
+        <p className="text-cv-green-light mb-10 max-w-xl mx-auto">
           Vous recherchez un alternant motivé et rigoureux pour votre cabinet ou
           entreprise ? N&apos;hésitez pas à me contacter.
         </p>

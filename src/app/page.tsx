@@ -37,7 +37,7 @@ export default function Home() {
           <Contact />
         </AnimatedSection>
       </main>
-      <footer className="bg-[var(--cv-green-dark)] text-[var(--cv-green-light)] text-center py-6 text-sm">
+      <footer className="bg-cv-green-dark text-cv-green-light text-center py-6 text-sm">
         © {new Date().getFullYear()} Michaël Myscile. Tous droits réservés.
       </footer>
     </>

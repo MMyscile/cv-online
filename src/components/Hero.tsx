@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="mt-10 animate-on-load animate-fade-in-up delay-400">
         <a
           href="#contact"
-          className="inline-block border-2 border-[var(--cv-green)] text-[var(--cv-green-dark)] px-8 py-3 text-sm uppercase tracking-wider hover:bg-[var(--cv-green)] hover:text-white transition-colors duration-300"
+          className="inline-block border-2 border-cv-green text-cv-green-dark px-8 py-3 text-sm uppercase tracking-wider hover:bg-cv-green hover:text-white transition-colors duration-300"
         >
           Me contacter
         </a>

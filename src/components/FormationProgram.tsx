@@ -158,7 +158,7 @@ function MiniCalendar({ monthKey, label }: { monthKey: string; label: string }) 
         key={day}
         className={`w-6 h-6 flex items-center justify-center text-xs rounded ${
           isMF
-            ? "bg-[var(--cv-green)] text-white font-semibold"
+            ? "bg-cv-green text-white font-semibold"
             : "text-gray-400"
         }`}
       >
@@ -169,7 +169,7 @@ function MiniCalendar({ monthKey, label }: { monthKey: string; label: string }) 
 
   return (
     <div className="bg-white rounded-lg p-3 shadow-sm">
-      <h4 className="text-sm font-semibold text-[var(--cv-green-dark)] mb-2 text-center">
+      <h4 className="text-sm font-semibold text-cv-green-dark mb-2 text-center">
         {label}
       </h4>
       <div className="grid grid-cols-7 gap-1 text-center">
@@ -200,11 +200,11 @@ function AccordionItem({
         className="w-full px-6 py-4 flex items-center justify-between bg-white hover:bg-gray-50 transition-colors"
       >
         <div className="text-left">
-          <h4 className="font-semibold text-[var(--cv-green-dark)]">{ccp.title}</h4>
+          <h4 className="font-semibold text-cv-green-dark">{ccp.title}</h4>
           <p className="text-sm text-gray-500">{ccp.subtitle}</p>
         </div>
         <svg
-          className={`w-5 h-5 text-[var(--cv-green)] transition-transform ${
+          className={`w-5 h-5 text-cv-green transition-transform ${
             isOpen ? "rotate-180" : ""
           }`}
           fill="none"
@@ -223,13 +223,13 @@ function AccordionItem({
           <div className="px-6 py-4 bg-gray-50 space-y-4">
           {ccp.content.map((section, idx) => (
             <div key={idx}>
-              <h5 className="font-medium text-[var(--cv-green-dark)] mb-2">
+              <h5 className="font-medium text-cv-green-dark mb-2">
                 {section.module}
               </h5>
               <ul className="space-y-1">
                 {section.items.map((item, i) => (
                   <li key={i} className="text-sm text-gray-600 flex items-start">
-                    <span className="w-1.5 h-1.5 bg-[var(--cv-green)] rounded-full mr-2 mt-1.5 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 bg-cv-green rounded-full mr-2 mt-1.5 shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -259,9 +259,9 @@ export default function FormationProgram() {
   };
 
   return (
-    <section id="formation" className="py-20 px-6 bg-[var(--cv-beige)]">
+    <section id="formation" className="py-20 px-6 bg-cv-beige">
       <div className="max-w-7xl xl:max-w-350 mx-auto">
-        <h2 className="text-3xl font-light text-center text-[var(--cv-green-dark)] mb-4">
+        <h2 className="text-3xl font-light text-center text-cv-green-dark mb-4">
           Formation
         </h2>
         <p className="text-center text-gray-600 mb-12">
@@ -271,26 +271,26 @@ export default function FormationProgram() {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           <div className="bg-white rounded-lg p-4 text-center shadow-sm">
-            <div className="text-2xl font-bold text-[var(--cv-green-dark)]">18</div>
+            <div className="text-2xl font-bold text-cv-green-dark">18</div>
             <div className="text-sm text-gray-500">mois de formation</div>
           </div>
           <div className="bg-white rounded-lg p-4 text-center shadow-sm">
-            <div className="text-2xl font-bold text-[var(--cv-green-dark)]">658h</div>
+            <div className="text-2xl font-bold text-cv-green-dark">658h</div>
             <div className="text-sm text-gray-500">en centre (25%)</div>
           </div>
           <div className="bg-white rounded-lg p-4 text-center shadow-sm">
-            <div className="text-2xl font-bold text-[var(--cv-green-dark)]">1974h</div>
+            <div className="text-2xl font-bold text-cv-green-dark">1974h</div>
             <div className="text-sm text-gray-500">en entreprise (75%)</div>
           </div>
           <div className="bg-white rounded-lg p-4 text-center shadow-sm">
-            <div className="text-2xl font-bold text-[var(--cv-green-dark)]">4j</div>
+            <div className="text-2xl font-bold text-cv-green-dark">4j</div>
             <div className="text-sm text-gray-500">par mois en centre</div>
           </div>
         </div>
 
         {/* Calendrier */}
         <div className="mb-16" ref={calendarSectionRef}>
-          <h3 className="text-xl font-semibold text-[var(--cv-green-dark)] mb-6 flex items-center">
+          <h3 className="text-xl font-semibold text-cv-green-dark mb-6 flex items-center">
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
@@ -298,13 +298,13 @@ export default function FormationProgram() {
           </h3>
           <div className="flex items-center gap-4 mb-4 text-sm">
             <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-[var(--cv-green)] rounded" />
+              <div className="w-4 h-4 bg-cv-green rounded" />
               <span className="text-gray-600">Jours en centre de formation</span>
             </div>
           </div>
           <div
-            className={`relative transition-[max-height] duration-[1500ms] ease-[cubic-bezier(0.4,0,0.2,1)] overflow-hidden xl:max-h-none! ${
-              isCalendarExpanded ? "max-h-[2200px]" : "max-h-[420px]"
+            className={`relative transition-[max-height] duration-1500 ease-in-out overflow-hidden xl:max-h-none! ${
+              isCalendarExpanded ? "max-h-550" : "max-h-105"
             }`}
           >
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 pb-4">
@@ -313,12 +313,12 @@ export default function FormationProgram() {
               ))}
             </div>
             {!isCalendarExpanded && (
-              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[var(--cv-beige)] to-transparent pointer-events-none xl:hidden" />
+              <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-cv-beige to-transparent pointer-events-none xl:hidden" />
             )}
           </div>
           <button
             onClick={handleCalendarToggle}
-            className="mt-4 mx-auto text-[var(--cv-green-dark)] font-medium text-sm hover:underline flex items-center gap-1 xl:hidden"
+            className="mt-4 mx-auto text-cv-green-dark font-medium text-sm hover:underline flex items-center gap-1 xl:hidden"
           >
             {isCalendarExpanded ? (
               <>
@@ -340,7 +340,7 @@ export default function FormationProgram() {
 
         {/* Programme */}
         <div>
-          <h3 className="text-xl font-semibold text-[var(--cv-green-dark)] mb-6 flex items-center">
+          <h3 className="text-xl font-semibold text-cv-green-dark mb-6 flex items-center">
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
